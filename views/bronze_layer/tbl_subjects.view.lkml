@@ -89,6 +89,20 @@ view: tbl_subjects {
     sql: ${TABLE}.SubjectDateOfBirth ;;
   }
 
+
+  ### Quantiphi calculate for age and age tier
+  dimension: subject_age {
+    type: number
+    sql: DATEDIFF(CURRENT_DATE(),${subject_date_of_birth_date},YEAR) ;;
+  }
+
+  dimension: subject_age_range {
+    type: tier
+    tiers: [0,10,20,30,40,50,65]
+    style: classic
+    sql:${subject_age} ;;
+  }
+
   dimension_group: subject_date_of_call {
     type: time
     timeframes: [
