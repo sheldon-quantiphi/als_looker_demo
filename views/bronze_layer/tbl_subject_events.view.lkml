@@ -109,6 +109,11 @@ view: tbl_subject_events {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [subject_event_id,subject_id,subject_event_date,subject_event_date,subject_event_details]
+  }
+  measure: subject_event_count {
+    type: count_distinct
+    sql: ${subject_event_id} ;;
+    drill_fields: [subject_event_id,subject_id,subject_event_date,subject_event_date,subject_event_details]
   }
 }
