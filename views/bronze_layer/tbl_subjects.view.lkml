@@ -93,13 +93,13 @@ view: tbl_subjects {
   ### Quantiphi calculate for age and age tier
   dimension: subject_age {
     type: number
-    sql: DATEDIFF(CURRENT_DATE(),${subject_date_of_birth_date},YEAR) ;;
+    sql: DATE_DIFF(CURRENT_DATE(),${subject_date_of_birth_date},YEAR) ;;
   }
 
   dimension: subject_age_range {
     type: tier
-    tiers: [0,10,20,30,40,50,65]
-    style: classic
+    tiers: [0,20,30,40,50,65]
+    style: integer
     sql:${subject_age} ;;
   }
 
