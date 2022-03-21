@@ -61,12 +61,14 @@ view: chr_data__chr1 {
   }
 
   dimension: an {
+    label: "Number of Alleles"
     type: number
     description: "Total number of alleles in called genotypes"
     sql: ${TABLE}.AN ;;
   }
 
   dimension: base_qrank_sum {
+    label: "Z-score Wilcoxon Rank"
     type: number
     description: "Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities"
     sql: ${TABLE}.BaseQRankSum ;;
@@ -74,6 +76,7 @@ view: chr_data__chr1 {
 
   dimension: call {
     hidden: yes
+
     sql: ${TABLE}.call ;;
   }
 
@@ -96,18 +99,21 @@ view: chr_data__chr1 {
   }
 
   dimension: db {
+    label: "dbSNP Membership"
     type: yesno
     description: "dbSNP Membership"
     sql: ${TABLE}.DB ;;
   }
 
   dimension: dp {
+    label: "Read Depth"
     type: number
     description: "Approximate read depth; some reads may have been filtered"
     sql: ${TABLE}.DP ;;
   }
 
   dimension: ds {
+    label: "Downsampled"
     type: yesno
     description: "Were any of the samples downsampled?"
     sql: ${TABLE}.DS ;;
@@ -131,12 +137,14 @@ view: chr_data__chr1 {
   }
 
   dimension: fs {
+    label: "Fisher p-value"
     type: number
     description: "Phred-scaled p-value using Fisher's exact test to detect strand bias"
     sql: ${TABLE}.FS ;;
   }
 
   dimension: gq_mean {
+    label: "Mean of GQ values"
     type: number
     description: "Mean of all GQ values"
     sql: ${TABLE}.GQ_MEAN ;;
@@ -155,24 +163,28 @@ view: chr_data__chr1 {
   }
 
   dimension: hwp {
+    label: "HW P-value"
     type: number
     description: "P value from test of Hardy Weinberg Equilibrium"
     sql: ${TABLE}.HWP ;;
   }
 
   dimension: inbreeding_coeff {
+    label: "Inbreeding coefficient"
     type: number
     description: "Inbreeding coefficient as estimated from the genotype likelihoods per-sample when compared against the Hardy-Weinberg expectation"
     sql: ${TABLE}.InbreedingCoeff ;;
   }
 
   dimension: mq {
+    label: "RMS Mapping Quality"
     type: number
     description: "RMS Mapping Quality"
     sql: ${TABLE}.MQ ;;
   }
 
   dimension: mq0 {
+    label: "Mappinh Quality Zero"
     type: number
     description: "Total Mapping Quality Zero Reads"
     sql: ${TABLE}.MQ0 ;;
@@ -208,6 +220,7 @@ view: chr_data__chr1 {
   }
 
   dimension: qd {
+    label: "Quality by Depth"
     type: number
     description: "Variant Confidence/Quality by Depth"
     sql: ${TABLE}.QD ;;
@@ -292,18 +305,21 @@ view: chr_data__chr1__call {
   }
 
   dimension: gq {
+    label: "Genotype Quality"
     type: number
     description: "Genotype Quality"
     sql: GQ ;;
   }
 
   dimension: min_dp {
+    label: "Minimum DP"
     type: number
     description: "Minimum DP observed within the GVCF block"
     sql: MIN_DP ;;
   }
 
   dimension: pgt {
+    label: "Physical phasing haplotype"
     type: string
     description: "Physical phasing haplotype information, describing how the alternate alleles are phased in relation to one another"
     sql: PGT ;;
@@ -327,6 +343,7 @@ view: chr_data__chr1__call {
   }
 
   dimension: rgq {
+    label: "Reference genotype quality"
     type: number
     description: "Unconditional reference genotype confidence, encoded as a phred quality -10*log10 p(genotype call is wrong)"
     sql: RGQ ;;
@@ -346,6 +363,7 @@ view: chr_data__chr1__call {
 
 view: chr_data__chr1__names {
   dimension: chr_data__chr1__names {
+    label: "Variant Names"
     type: string
     description: "Variant names (e.g. RefSNP ID)."
     sql: chr_data__chr1__names ;;
