@@ -65,4 +65,55 @@ explore: tbl_subjects{
     sql_on: ${chr_data__chr1_view.sample_id} = ${chr_data__chr1_view.sample_id} and ${chr_data__chr1_view.subject_id} = ${tbl_subjects.subject_id} ;;
     relationship: many_to_one
   }
+  # join: chr_data__chr1 {
+  #   sql_on: ${chr_data__chr1.sample_id} = ${chr_data__chr1.sample_id} and ${chr_data__chr1.subject_id} = ${tbl_subjects.subject_id} ;;
+  #   relationship: many_to_one
+  # }
+  # join: chr_data__chr1 {
+  #   view_label: "Chr Data Chr1: Call"
+  #   sql: LEFT JOIN UNNEST(${chr_data__chr1.call}) as chr_data__chr1__call ;;
+  #   relationship: one_to_many
+  # }
+
+  # join: chr_data__chr1__names {
+  #   view_label: "Chr Data Chr1: Names"
+  #   sql: LEFT JOIN UNNEST(${chr_data__chr1.names}) as chr_data__chr1__names ;;
+  #   relationship: one_to_many
+  # }
+
+  # join: chr_data__chr1__filter {
+  #   view_label: "Chr Data Chr1: Filter"
+  #   sql: LEFT JOIN UNNEST(${chr_data__chr1.filter}) as chr_data__chr1__filter ;;
+  #   relationship: one_to_many
+  # }
+
+  # join: chr_data__chr1__call__ad {
+  #   view_label: "Chr Data Chr1: Call Ad"
+  #   sql: LEFT JOIN UNNEST(${chr_data__chr1__call.ad}) as chr_data__chr1__call__ad ;;
+  #   relationship: one_to_many
+  # }
+
+  # join: chr_data__chr1__call__pl {
+  #   view_label: "Chr Data Chr1: Call Pl"
+  #   sql: LEFT JOIN UNNEST(${chr_data__chr1__call.pl}) as chr_data__chr1__call__pl ;;
+  #   relationship: one_to_many
+  # }
+
+  # join: chr_data__chr1__call__sb {
+  #   view_label: "Chr Data Chr1: Call Sb"
+  #   sql: LEFT JOIN UNNEST(${chr_data__chr1__call.sb}) as chr_data__chr1__call__sb ;;
+  #   relationship: one_to_many
+  # }
+
+  # join: chr_data__chr1__call__genotype {
+  #   view_label: "Chr Data Chr1: Call Genotype"
+  #   sql: LEFT JOIN UNNEST(${chr_data__chr1__call.genotype}) as chr_data__chr1__call__genotype ;;
+  #   relationship: one_to_many
+  # }
+
+  # join: chr_data__chr1__alternate_bases {
+  #   view_label: "Chr Data Chr1: Alternate Bases"
+  #   sql: LEFT JOIN UNNEST(${chr_data__chr1.alternate_bases}) as chr_data__chr1__alternate_bases ;;
+  #   relationship: one_to_many
+  # }
 }

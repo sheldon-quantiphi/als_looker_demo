@@ -293,7 +293,7 @@ view: chr_data__chr1__call {
     sql: chr_data__chr1__call ;;
   }
 
-  dimension: dp {
+  dimension: dp_call {
     type: number
     description: "Approximate read depth (reads with MQ=255 or with bad mates are filtered)"
     sql: DP ;;
